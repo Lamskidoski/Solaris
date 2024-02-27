@@ -154,7 +154,7 @@
 }
 .mercury:hover {
     box-shadow: 0 0 15px 7px rgba(136, 136, 136, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .venus {
     position: absolute;
@@ -170,7 +170,7 @@
 }
 .venus:hover {
     box-shadow: 0px 0px 20px 7px rgba(231, 205, 205, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .earth {
     position: absolute;
@@ -186,7 +186,7 @@
 }
 .earth:hover {
     box-shadow: 0 0 20px 7px rgba(66, 142, 212, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .mars {
     position: absolute;
@@ -202,7 +202,7 @@
 }
 .mars:hover {
     box-shadow: 0px 0px 20px 7px rgba(239, 95, 95, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .jupiter {
     position: absolute;
@@ -218,7 +218,7 @@
 }
 .jupiter:hover {
     box-shadow: 0px 0px 20px 7px rgba(226, 148, 104, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .saturn {
     position: absolute;
@@ -234,7 +234,7 @@
 }
 .saturn:hover {
     box-shadow: 0px 0px 20px 7px rgba(199, 170, 114, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .uranus {
     position: absolute;
@@ -250,7 +250,7 @@
 }
 .uranus:hover {
     box-shadow: 0px 0px 20px 7px rgba(201, 212, 241, 1);
-    transition: 2s;
+    transition: 1s;
 }
 .neptune {
     position: absolute;
@@ -267,12 +267,90 @@
 
 .neptune:hover {
     box-shadow: 0px 0px 20px 7px rgba(122, 145, 167, 1);
-    transition: 2s;
+    transition: 1s;
 }
 
+.modal {
+    background: linear-gradient(90deg, #0C164D 0%, #190B22 100%);
+    color: white;
+    height: 70%;
+    width: 100%;
+    max-width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-in-out;
+    display: none;
+}
 
-.popUp {
-   background: white;
-   height: 500px;
-   width: ;
+/* .modal {
+    position: fixed;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background: white;
+    width: 500px;
+    height: 400px;
+    max-width: 80%;
+    display: none;
+} */
+ .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+     padding: 10px 15px;
+     
+     
+}
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 27px;
+    left: 1480px;
+}
+.modal- {
+    color: white;
+}
+.modal-body {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    
+} 
+
+#overlay { 
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }

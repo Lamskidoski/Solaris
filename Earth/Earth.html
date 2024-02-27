@@ -5,23 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="earth.css" />
+    <script src="earth.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <span class="earth"></span>
+    <button data-modal-target="#modal">open modal</button>
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">exempel</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis in quas enim esse nemo doloribus magnam ab voluptate tempore!</div>
+      </div>
     </div>
-    <div class="text">
-      <h1>Earth</h1>
-      <p>
-        Jorden är den största och mest kompakta av de inre planeterna. Jorden är
-        den enda av planeterna som konstaterats ha geologisk aktivitet och är
-        även den enda planeten som med säkerhet härbärgerar liv. Dess flytande
-        hydrosfär är unik bland stenplaneterna och jorden är också den enda
-        planeten hos vilken plattektonik har observerats. Jordens atmosfär
-        skiljer sig markant från de andra planeternas, vilket förklaras av att
-        närvaron av levande organismer har förändrat atmosfären till att
-        innehålla fritt syre, i dag motsvarande 21 procent.
-      </p>
-    </div>
+    <div id="overlay"></div>
   </body>
 </html>
