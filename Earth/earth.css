@@ -1,0 +1,31 @@
+body{
+    background: linear-gradient(90deg, #0C164D 0%, #190B22 100%);
+}
+
+.earth {
+    position: absolute;
+    bottom: -180px;
+    margin: 0 auto;
+    left: -1100px;
+    width: 1278px;
+    height: 1278px;
+    border-radius: 50%;
+    background: rgba(66, 142, 212, 1);
+    box-shadow: 0 0 40px 0 rgba(66, 142, 212, 1),
+    0 0 60px 0 lightcoral;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    color: white;
+}
+
+.text p {
+    height: 250px;
+    width: 500px;
+}
