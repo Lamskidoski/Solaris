@@ -140,19 +140,19 @@
     border: none;
     
 }
-.mercury {
+.merkurius {
     position: absolute;
     bottom: 430px;
     left: 300px;
     margin: 0 auto;
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     background-image: linear-gradient(to right bottom, #888888, #676767, #494848, #2c2b2b, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
 }
-.mercury:hover {
+.merkurius:hover {
     box-shadow: 0 0 15px 7px rgba(136, 136, 136, 1);
     transition: 1s;
 }
@@ -161,8 +161,8 @@
     bottom: 422px;
     left: 450px;
     margin: 0 auto;
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 34px;
     background-image: linear-gradient(to right bottom, #e7cdcd, #ab9898, #736767, #3f3939, #111010);
     border-radius: 50%;
     border: none;
@@ -177,8 +177,8 @@
     bottom: 420px;
     left: 630px;
     margin: 0 auto;
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
     background-image: linear-gradient(to right bottom, #0273ee, #005ab2, #004078, #002642, #020911);
     border-radius: 50%;
     border: none;
@@ -191,10 +191,10 @@
 .mars {
     position: absolute;
     bottom: 425px;
-    left: 780px;
+    left: 815px;
     margin: 0 auto;
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     background-image: linear-gradient(to right bottom, #ef5f5f, #b24b4d, #793739, #432425, #111010);
     border-radius: 50%;
     border: none;
@@ -206,11 +206,11 @@
 }
 .jupiter {
     position: absolute;
-    bottom: 350px; 
+    bottom: 340px; 
     left: 955px;
     margin: 0 auto;
-    width: 188px;
-    height: 188px;
+    width: 200px;
+    height: 200px;
     background-image: linear-gradient(to right bottom, #e29468, #ac6d56, #764b42, #422c2a, #111010);
     border-radius: 50%;
     border: none;
@@ -225,8 +225,8 @@
     bottom: 375px;
     left: 1300px;
     margin: 0 auto;
-    width: 114px;
-    height: 114px;
+    width: 120px;
+    height: 120px;
     background-image: linear-gradient(to right bottom, #c7aa72, #9e7b5b, #705344, #402f2c, #111010);
     border-radius: 50%;
     border: none;
@@ -270,6 +270,8 @@
     transition: 1s;
 }
 
+/* ------------------------------------------------------------------- */
+
 .modal {
     background: linear-gradient(90deg, #0C164D 0%, #190B22 100%);
     color: white;
@@ -284,12 +286,9 @@
     transition: 200ms ease-in-out;
     display: none;
 }
-
-
- .modal.active {
+.modal.active {
     transform: translate(-50%, -50%) scale(1);
 }
-
 .modal-header {
      padding: 10px 15px;
      
@@ -302,7 +301,6 @@
     flex-direction: column;
     color: white;
 }
-
 .modal-header .close-button {
     cursor: pointer;
     border: none;
@@ -315,16 +313,11 @@
     top: 27px;
     left: 1480px;
 }
-.modal- {
-    color: white;
-}
-
-
 .modal-body {
-    padding: 10px 15px;
-    
-    
+    padding: 10px 15px;  
 } 
+
+
 .status {
     display: flex;
     flex: 1 1 50%
@@ -337,6 +330,70 @@
     width: 80%;
 }
 
+h2 {
+    width: 100%;
+}
+.search-bar {
+    position: absolute;
+    top: 20px;
+    right: 700px;
+    width: 400px;
+    background-image: linear-gradient(to right, #f6d709, #e6a01c, #c6702a, #9a472e, #672828);
+    border-radius: 10px;
+    opacity: 0.7;
+    z-index: 10;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+input {
+    flex: 1;
+    height: 40px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333;
+}
+.on-click {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+.on-click.fa-solid {
+    width: 25px;
+    color: white;
+    font-size: 22px;
+    
+}
+.on-click:hover {
+    box-shadow: 0px 0px 20px 0px;
+    cursor: pointer;
+}
+::placeholder {
+    color: black;
+}
+.search-result ul {
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+}
+
+.search-result ul li {
+    list-style: none;
+    border-radius: 5px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.search-result ul li:hover {
+    background: lightblue;
+}
+/* -------------------------------------------------------- */
 
 #overlay { 
     position: fixed;
@@ -355,6 +412,3 @@
     pointer-events: all;
 }
 
-h2 {
-    width: 100%;
-}

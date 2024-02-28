@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solaris</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/680ceb3daa.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="Script.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="sky" data-sky></div>
       <div class="text">
+        <div class="search-bar" id="search-bar">
+          <div class="row">
+            <input
+              type="text"
+              class="search-input"
+              id="searchInput"
+              placeholder="Search..."
+              autocomplete="off"
+            />
+            <button class="on-click">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div class="search-result" id="searchResult"></div>
+        </div>
+
         <h1>Solsystemet</h1>
         <p>solaris</p>
+
         <div class="modal" id="modal">
           <div class="modal-header">
             <div class="title" id="title">hej</div>
@@ -27,7 +48,7 @@
 
       <div class="solaris">
         <button class="sun" id="sun"></button>
-        <button class="mercury" id="mercury"></button>
+        <button class="merkurius" id="merkurius"></button>
         <button class="venus" id="venus"></button>
         <button class="earth" id="earth"></button>
         <button class="mars" id="mars"></button>

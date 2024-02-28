@@ -1,6 +1,6 @@
 const openBtn = document.getElementById("modal")
 const closeBtn = document.getElementById("close-button")
-const mercury = document.getElementById("mercury")
+const merkurius = document.getElementById("merkurius")
 const venus = document.getElementById("venus")
 const earth = document.getElementById("earth")
 const mars = document.getElementById("mars")
@@ -23,8 +23,8 @@ function getBodies() {
   .then(data => {
     console.log(data);
     let planet = data.bodies;
-    console.log(planet[3].name);
-    mercury.addEventListener("click", function () {
+    
+    merkurius.addEventListener("click", function () {
       getInfo(planet[1]);
       getStatus(planet[1]);
       getMoons(planet[1]);
@@ -88,6 +88,10 @@ function openModal() {
   console.log("du har öppnat");
 }
 
+function onclick() {
+
+}
+
 closeBtn.addEventListener("click", function() {
   openBtn.style.display = "none"
 })
@@ -117,9 +121,7 @@ function getStatus(planetStatus) {
   </h2>
   <h2 style="color: yellow;">Tepmeratur Night
   <p style="color: white;">${planetStatus.temp.night}</p>
-  </h2>
-  
-  `
+  </h2> `
 }
 
 function getMoons (planetMoons) {
@@ -131,7 +133,56 @@ function getMoons (planetMoons) {
   `
 }
 
+const searchWords = [
+  "merkurius", 
+  "venus", 
+  "earth", 
+  "mars", 
+  "jupiter", 
+  "saturn", 
+  "uranus", 
+  "neptune", 
+];
 
+const searchResult = document.getElementById("searchResult");
+const searchInput = document.getElementById("searchInput");
+
+searchInput.onkeyup = function() {
+  let result = [];
+  let input = searchInput.value;
+  if (input.length) {
+    result= searchWords.filter((keyword) => {
+      return keyword.includes(input);
+    });
+    console.log(result);
+  }
+  display(result);
+  
+  if(!result.length){
+    searchResult.innerHTML = "";
+  }
+}
+
+function display(result){
+  const content = result.map((list)=>{
+    return "<li onclick=selectInput(this)>" + list + "</li>"
+  })
+  searchResult.innerHTML = "<ul>" + content.join("") + "</ul>"
+}
+
+function selectInput (list){
+  searchInput.value = list.innerHTML;
+  searchResult.innerHTML = "";
+}
+
+// --------------------------------------------------------------- //
+
+const searchBar = document.getElementById("search.bar")
+
+function search() {
+  let input = document.getElementById("searchInput").value; 
+    document.getElementById("searchResult").innerHTML = "you search for: " + input;
+}
 
 const SKY = document.querySelector('[data-sky]');
 // quantity stars per 100x100px 
@@ -174,52 +225,3 @@ if (SKY) {
     }
   }
 }
-
-
-
-
-
-
-// mercury.addEventListener("click", function() {
-// planetInfo(fetchData.bodies[1])
-// })
-
-
-
-// visar popUp när den är fylld med information
-// popUp.style.display = "block";
-// popUp.style.position = "absolute";
-
-
-// const openModalButtons = document.querySelectorAll('[data-modal-target]')
-// const closeModalButtons = document.querySelectorAll('[data-close-button]')
-// const overlay = document.getElementById("overlay")
-
-// openModalButtons.forEach(button => {
-// button.addEventListener("click", () => {
-//   const modal = document.querySelector(button.dataset.modalTarget)
-//   openModal(modal)
-// })
-// })
-
-// closeModalButtons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     const modal = button.closest("modal")
-//     closeModal(modal)
-//   })
-//   })
-
-// function openModal(modal) {
-//   if (modal == null) return
-//   popup.classList.add("active")
-//   overlay.classList.add("active")
-// }
-
-// function closeModal(modal) {
-//   if (modal == null) return
-//   popup.classList.remove("active")
-//   overlay.classList.remove("active")
-// }
-
-
-
