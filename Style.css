@@ -133,7 +133,7 @@
     width: 1278px;
     height: 1278px;
     border-radius: 50%;
-    background-color: #ffde00;
+    background-image: linear-gradient(to left top, #ffde00, #dc9727, #a35d31, #5b3229, #111010);
     box-shadow: 0 0 40px 0 #ffde00,
     0 0 60px 0 lightcoral;
     animation: shine 4s ease-in-out infinite;
@@ -147,7 +147,7 @@
     margin: 0 auto;
     width: 14px;
     height: 14px;
-    background: rgba(136, 136, 136, 1);
+    background-image: linear-gradient(to right bottom, #888888, #676767, #494848, #2c2b2b, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -163,7 +163,7 @@
     margin: 0 auto;
     width: 26px;
     height: 26px;
-    background: rgba(231, 205, 205, 1);
+    background-image: linear-gradient(to right bottom, #e7cdcd, #ab9898, #736767, #3f3939, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -179,7 +179,7 @@
     margin: 0 auto;
     width: 28px;
     height: 28px;
-    background: rgba(66, 142, 212, 1);
+    background-image: linear-gradient(to right bottom, #0273ee, #005ab2, #004078, #002642, #020911);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -195,7 +195,7 @@
     margin: 0 auto;
     width: 14px;
     height: 14px;
-    background: rgba(239, 95, 95, 1);
+    background-image: linear-gradient(to right bottom, #ef5f5f, #b24b4d, #793739, #432425, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -211,7 +211,7 @@
     margin: 0 auto;
     width: 188px;
     height: 188px;
-    background: rgba(226, 148, 104, 1);
+    background-image: linear-gradient(to right bottom, #e29468, #ac6d56, #764b42, #422c2a, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -227,7 +227,7 @@
     margin: 0 auto;
     width: 114px;
     height: 114px;
-    background: rgba(199, 170, 114, 1);
+    background-image: linear-gradient(to right bottom, #c7aa72, #9e7b5b, #705344, #402f2c, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -242,7 +242,7 @@
     margin: 0 auto;
     width: 66px;
     height: 66px;
-    background: rgba(201, 212, 241, 1);
+    background-image: linear-gradient(to right bottom, #c9d4f1, #929db6, #5f6a7e, #303a4a, #030f1c);
     border-radius: 50%;
     left: 1550px;
     border: none;
@@ -259,7 +259,7 @@
     margin: 0 auto;
     width: 66px;
     height: 66px;
-    background: rgba(122, 145, 167, 1);
+    background-image: linear-gradient(to right bottom, #7a91a7, #696b7d, #514953, #322b2e, #111010);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -285,21 +285,7 @@
     display: none;
 }
 
-/* .modal {
-    position: fixed;
-    top: 11%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background: white;
-    width: 500px;
-    height: 400px;
-    max-width: 80%;
-    display: none;
-} */
+
  .modal.active {
     transform: translate(-50%, -50%) scale(1);
 }
@@ -332,11 +318,25 @@
 .modal- {
     color: white;
 }
+
+
 .modal-body {
     padding: 10px 15px;
-    flex-wrap: wrap;
+    
     
 } 
+.status {
+    display: flex;
+    flex: 1 1 50%
+}
+
+.moons {
+    padding: 15px;
+}
+.moons p {
+    width: 80%;
+}
+
 
 #overlay { 
     position: fixed;
@@ -353,4 +353,8 @@
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+h2 {
+    width: 100%;
 }

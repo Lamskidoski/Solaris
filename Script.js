@@ -104,12 +104,21 @@ function getInfo(planetData) {
 function getStatus(planetStatus) {
   const status = document.getElementById("status")
   status.innerHTML = `
-  <h2 style="color: yellow;">Omkrets</h2>
+  <h2 style="color: yellow;">Omkrets
   <p style="color: white;">${planetStatus.circumference}</p>
-  <h2 style="color: yellow;">KM från solen</h2>
+  </h2>
+  
+  <h2 style="color: yellow;">KM från solen
   <p style="color: white;">${planetStatus.distance}</p>
-  <h2 style="color: yellow;">Tepmeratur</h2>
-  <p style="color: white;">${planetStatus.temp}</p>
+  </h2>
+  
+  <h2 style="color: yellow;">Tepmeratur Day
+  <p style="color: white;">${planetStatus.temp.day}</p>
+  </h2>
+  <h2 style="color: yellow;">Tepmeratur Night
+  <p style="color: white;">${planetStatus.temp.night}</p>
+  </h2>
+  
   `
 }
 
@@ -117,7 +126,8 @@ function getMoons (planetMoons) {
   const moons = document.getElementById("moons")
   moons.innerHTML = `
   <h2 style="color: yellow;">Månar</h2>
-  <p style="color: white;">${planetMoons.moons}</p>
+  <p style="color: white; 
+  ">${planetMoons.moons}</p>
   `
 }
 
@@ -153,8 +163,8 @@ if (SKY) {
     SKY.innerHTML = starTemplate;
   }
   function getStarsQuantitiy(skySize) {
-    const qH = skySize.width / 600 * (QUANTITY / 2 );
-    const qV = skySize.heigt / 600 * (QUANTITY / 2 );
+    const qH = skySize.width / 700 * (QUANTITY / 2 );
+    const qV = skySize.heigt / 700 * (QUANTITY / 2 );
     return qH + qV;
   }
   function getStarPos(skySize) {
