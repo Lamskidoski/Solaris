@@ -358,7 +358,9 @@ input {
     font-size: 18px;
     color: #333;
 }
-.on-click {
+.searchBtn {
+    position: relative;
+    left: 110px;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -366,13 +368,13 @@ input {
     outline: 0;
     background: transparent;
 }
-.on-click.fa-solid {
+.searchBtn.fa-solid {
     width: 25px;
     color: white;
     font-size: 22px;
     
 }
-.on-click:hover {
+.searchBtn:hover {
     box-shadow: 0px 0px 20px 0px;
     cursor: pointer;
 }

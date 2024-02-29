@@ -9,7 +9,8 @@ const saturn = document.getElementById("saturn")
 const uranus = document.getElementById("uranus")
 const neptune = document.getElementById("neptune")
 
-
+const searchResult = document.getElementById("searchResult");
+const searchInput = document.getElementById("searchInput");
 
 function getBodies() {
   const apiUrl = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies';
@@ -25,55 +26,48 @@ function getBodies() {
     let planet = data.bodies;
     
     merkurius.addEventListener("click", function () {
-      getInfo(planet[1]);
-      getStatus(planet[1]);
-      getMoons(planet[1]);
-      openModal();
+      openModal(planet[1]);
     })
     venus.addEventListener("click", function () {
-      getInfo(planet[2]);
-      getStatus(planet[2]);
-      getMoons(planet[2]);
-      openModal();
+      openModal(planet[2]);
     })
     earth.addEventListener("click", function () {
-      getInfo(planet[3]);
-      getStatus(planet[3]);
-      getMoons(planet[3]);
-      openModal();
+      openModal(planet[3]);
     })
     mars.addEventListener("click", function () {
-      getInfo(planet[4]);
-      getStatus(planet[4]);
-      getMoons(planet[4]);
-      openModal();
+      openModal(planet[4]);
     })
     jupiter.addEventListener("click", function () {
-      getInfo(planet[5]);
-      getStatus(planet[5]);
-      getMoons(planet[5]);
-      openModal();
+      openModal(planet[5]);
     })
     saturn.addEventListener("click", function () {
-      getInfo(planet[6]);
-      getStatus(planet[6]);
-      getMoons(planet[6]);
-      openModal();
+      openModal(planet[6]);
     })
     uranus.addEventListener("click", function () {
-      getInfo(planet[7]);
-      getStatus(planet[7]);
-      getMoons(planet[7]);
-      openModal();
+      openModal(planet[7]);
     })
     neptune.addEventListener("click", function () {
-      getInfo(planet[8]);
-      getStatus(planet[8]);
-      getMoons(planet[8]);
-      openModal();
+      openModal(planet[8]);
     })
-    
-
+    // Eventlistener på om formuläret submittas
+    document.getElementById('testForm').addEventListener("submit", (e) => {
+      // Tar bort defaultfunktionen för att submita form som är att ladda om sidan
+      e.preventDefault();
+      console.log(planet);
+      // Går igenom alla planeter
+      planet.forEach(searchPlanet => {
+        // Gör sökvärdet och planetnamnet till lowercase för att inte ha sökfunktionen case-sensitive
+        const lowerCaseSearch = searchInput.value.toLowerCase();
+        const lowerCasePlanet = searchPlanet.name.toLowerCase();
+        
+        // Om sökvärdet stämmer överens med planetens namn
+        if(lowerCasePlanet == lowerCaseSearch) {
+          console.log(lowerCasePlanet, lowerCaseSearch);
+          // Öppna modal med planetens värde som argument
+          openModal(searchPlanet)
+        }
+      });
+    })
     // Hantera den mottagna datan här
   })
   .catch(error => {
@@ -83,14 +77,14 @@ function getBodies() {
 getBodies();
 
 // öppnar med hjälp av knappen
-function openModal() {
+function openModal(planet) {
+  getInfo(planet);
+  getStatus(planet);
+  getMoons(planet);
   openBtn.style.display = "block";
   console.log("du har öppnat");
 }
 
-function onclick() {
-
-}
 
 closeBtn.addEventListener("click", function() {
   openBtn.style.display = "none"
@@ -129,24 +123,21 @@ function getMoons (planetMoons) {
   moons.innerHTML = `
   <h2 style="color: yellow;">Månar</h2>
   <p style="color: white; 
-  ">${planetMoons.moons}</p>
+  ">${planetMoons.moons.length > 0 ? planetMoons.moons.join(", ") : "saknar månar"}</p>
+  
   `
 }
-
+// ------------------------------------------ //
 const searchWords = [
   "merkurius", 
   "venus", 
-  "earth", 
+  "jorden", 
   "mars", 
   "jupiter", 
-  "saturn", 
+  "saturnus", 
   "uranus", 
-  "neptune", 
+  "neptunus", 
 ];
-
-const searchResult = document.getElementById("searchResult");
-const searchInput = document.getElementById("searchInput");
-
 searchInput.onkeyup = function() {
   let result = [];
   let input = searchInput.value;
@@ -162,27 +153,24 @@ searchInput.onkeyup = function() {
     searchResult.innerHTML = "";
   }
 }
-
 function display(result){
   const content = result.map((list)=>{
     return "<li onclick=selectInput(this)>" + list + "</li>"
   })
   searchResult.innerHTML = "<ul>" + content.join("") + "</ul>"
 }
-
 function selectInput (list){
   searchInput.value = list.innerHTML;
   searchResult.innerHTML = "";
 }
-
-// --------------------------------------------------------------- //
-
-const searchBar = document.getElementById("search.bar")
-
 function search() {
   let input = document.getElementById("searchInput").value; 
     document.getElementById("searchResult").innerHTML = "you search for: " + input;
+    console.log(input);
 }
+
+// --------------------------------------------------------------- //
+
 
 const SKY = document.querySelector('[data-sky]');
 // quantity stars per 100x100px 

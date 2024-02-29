@@ -17,16 +17,18 @@
       <div class="text">
         <div class="search-bar" id="search-bar">
           <div class="row">
-            <input
-              type="text"
-              class="search-input"
-              id="searchInput"
-              placeholder="Search..."
-              autocomplete="off"
-            />
-            <button class="on-click">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            <form id="testForm">
+              <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search..."
+                autocomplete="off"
+              />
+              <button class="searchBtn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
           </div>
           <div class="search-result" id="searchResult"></div>
         </div>
@@ -54,9 +56,7 @@
         <button class="mars" id="mars"></button>
         <button class="jupiter" id="jupiter"></button>
         <button class="saturn" id="saturn">
-          <div class="clouds" id="clouds"></div>
           <div class="ring" id="ring"></div>
-          <div class="up" id="up"></div>
         </button>
         <button class="uranus" id="uranus"></button>
         <button class="neptune" id="neptune"></button>
