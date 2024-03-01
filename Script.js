@@ -25,6 +25,9 @@ function getBodies() {
     console.log(data);
     let planet = data.bodies;
     
+    sun.addEventListener("click", function () {
+      openModal(planet[0]);
+    })
     merkurius.addEventListener("click", function () {
       openModal(planet[1]);
     })
